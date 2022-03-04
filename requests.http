@@ -1,0 +1,53 @@
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+### Movies create
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+
+### Movies Index 
+GET http://localhost:3000/movies
+Content-Type: application/json
+
+### Movies Show 
+GET http://localhost:3000/movies/1
+Content-Type: application/json
+
+### Movies Update 
+PATCH http://localhost:3000/movies/1
+Content-Type: application/json
+
+{
+  "title": "Star Wars",
+  "release_date": "1977",
+  "director": "George Lucas",
+  "overview": "Here's some money. Go see a Star War.",
+  "poster_path": "https://m.media-amazon.com/images/I/81P3lDJbjCL._AC_SY450_.jpg"
+}
+
+### Movies Destroy
+DELETE http://localhost:3000/movies/4
+Content-Type: application/json
+
+
+### Movies Search
+GET http://localhost:3000/movies/search/star
+Content-Type: application/json
