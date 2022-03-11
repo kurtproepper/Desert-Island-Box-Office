@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import MoviesIndex from "../views/Movies.vue";
 
 const routes = [
   {
@@ -33,6 +34,7 @@ const routes = [
     name: "logout",
     component: Logout,
   },
+  { path: "/movies", name: "movies-index", component: MoviesIndex },
 ];
 
 const router = createRouter({
