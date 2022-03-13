@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDY4NjExNTh9.DzZSRAZ0RZPthp1IhmqX6b_bYQr5eEQ3tbWebJwm-bw
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDc2MTU3MjV9.5LYuEdcZOG1a723TyQ2mKe1cnObwus4YIRrzfpDKVFM
 
 ### Users create (signup)
 POST http://localhost:3000/users
@@ -60,3 +60,38 @@ Authorization: Bearer {{jwt}}
 GET http://localhost:3000/movies/search/star
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
+
+### User_Movies Create 
+POST  http://localhost:3000/user_movies
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "movie_id": 1,
+  "user_id": 1,
+  "rank": 1
+}
+
+### User_Movies Index 
+GET http://localhost:3000/user_movies
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### User_Movies Show 
+GET http://localhost:3000/user_movies/1
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### User_Movies Destroy
+DELETE http://localhost:3000/user_movies/1
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### User_Movies Edit 
+PATCH  http://localhost:3000/user_movies/2
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "rank": 4
+}

@@ -9,6 +9,8 @@
     <router-link to="/logout">Logout</router-link>
     |
     <router-link to="/movies">Movies</router-link>
+    |
+    <router-link to="/profile">Profile</router-link>
   </div>
   <router-view />
 </template>

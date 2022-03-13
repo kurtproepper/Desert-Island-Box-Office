@@ -4,6 +4,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import MoviesIndex from "../views/Movies.vue";
+import Profile from "../views/Profile.vue";
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     component: Logout,
   },
   { path: "/movies", name: "movies-index", component: MoviesIndex },
+
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+  },
 ];
 
 const router = createRouter({
