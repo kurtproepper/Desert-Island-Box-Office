@@ -5,6 +5,7 @@ export default {
     return {
       user_movies: [],
       results: [],
+      searchText: "",
     };
   },
   created: function () {
@@ -18,7 +19,7 @@ export default {
       });
     },
     movieSearch: function () {
-      axios.get("/movies/search/star").then((response) => {
+      axios.get("/movies/search/" + this.searchText).then((response) => {
         console.log("Search for Star completed", response);
         this.results = response.data;
       });
@@ -44,9 +45,9 @@ export default {
     <h1>Search for Movies!</h1>
     <div>
       <label>Search:</label>
-      <form v-on:submit.prevent="submit()"></form>
+      <form v-on:submit="movieSearch()"></form>
       <button @click="movieSearch">Search</button>
-      <input type="text" v-model="results.title" />
+      <input type="text" v-model="searchText" />
     </div>
   </div>
 </template>
