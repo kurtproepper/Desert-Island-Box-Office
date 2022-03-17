@@ -20,7 +20,7 @@ export default {
     },
     movieSearch: function () {
       axios.get("/movies/search/" + this.searchText).then((response) => {
-        console.log("Search for Star completed", response);
+        console.log("Search completed", response);
         this.results = response.data;
       });
     },
@@ -48,6 +48,7 @@ export default {
       <form v-on:submit="movieSearch()"></form>
       <button @click="movieSearch">Search</button>
       <input type="text" v-model="searchText" />
+      <p>{{ this.results }}</p>
     </div>
   </div>
 </template>
