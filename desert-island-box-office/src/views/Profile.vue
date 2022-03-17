@@ -31,15 +31,7 @@ export default {
 <template>
   <div class="user-movies-index">
     <h1>Your Top 10</h1>
-    <div v-for="user_movie in user_movies" v-bind:key="user_movie.id">
-      <h2>{{ user_movie.title }}</h2>
-      <img v-bind:src="user_movie.poster_path" v-bind:alt="user_movie.title" />
-      <p>Rank: {{ user_movie.rank }}</p>
-      <p>Title: {{ user_movie.title }}</p>
-      <p>Year: {{ user_movie.release_date }}</p>
-      <p>Director: {{ user_movie.director }}</p>
-      <p>Summary: {{ user_movie.overview }}</p>
-    </div>
+    <p>Your Favorite Movies: {{ this.user_movies }}</p>
   </div>
   <div class="movie-search">
     <h1>Search for Movies!</h1>
