@@ -47,8 +47,13 @@ export default {
       <button @click="movieSearch">Search</button>
       <input type="text" v-model="searchText" />
       <div v-for="result in results" v-bind:key="result.id">
-        <p>{{ result.title }}</p>
+        <p>
+          <img v-bind:src="'https://image.tmdb.org/t/p/w500/' + result.poster_path" v-bind:alt="result.title" />
+          {{ result.poster_path }}
+        </p>
       </div>
     </div>
   </div>
 </template>
+
+<img v-bind:src="'/media/avatars/' + joke.avatar" />
