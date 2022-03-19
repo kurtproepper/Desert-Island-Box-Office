@@ -11,6 +11,8 @@
     <router-link to="/movies">Movies</router-link>
     |
     <router-link to="/profile">Profile</router-link>
+    |
+    <router-link to="/search">Search/Add Movies</router-link>
   </div>
   <router-view />
 </template>

@@ -3,14 +3,11 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      user_movies: [],
       results: [],
       searchText: "",
     };
   },
-  created: function () {
-    this.indexUserMovies();
-  },
+  created: function () {},
   methods: {
     indexUserMovies: function () {
       axios.get("/user_movies").then((response) => {
@@ -29,12 +26,6 @@ export default {
 </script>
 
 <template>
-  <div class="user-movies-show">
-    <h1>Your Top 10</h1>
-    <div v-for="user_movie in user_movies" v-bind:key="user_movie.title">
-      <p>{{ user_movie.movie.title }}</p>
-    </div>
-  </div>
   <div class="movie-search">
     <h1>Search for Movies!</h1>
     <div>

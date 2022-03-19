@@ -5,6 +5,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import MoviesIndex from "../views/Movies.vue";
 import Profile from "../views/Profile.vue";
+import Search from "../views/Search.vue";
 
 const routes = [
   {
@@ -41,6 +42,12 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+  },
+
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
 ];
 
