@@ -3,19 +3,19 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      user_movies: [],
+      movies: [],
       results: [],
       searchText: "",
     };
   },
   created: function () {
-    this.indexUserMovies();
+    this.showUser();
   },
   methods: {
-    indexUserMovies: function () {
-      axios.get("/user_movies").then((response) => {
+    showUser: function () {
+      axios.get("/user/1").then((response) => {
         console.log("Here are your movies", response);
-        this.user_movies = response.data;
+        this.movies = response.data.movies;
       });
     },
     movieSearch: function () {
@@ -29,25 +29,11 @@ export default {
 </script>
 
 <template>
-  <div class="user-movies-show">
+  <div class="user-show">
     <h1>Your Top 10</h1>
-    <div v-for="user_movie in user_movies" v-bind:key="user_movie.title">
-      <p>{{ user_movie.movie.title }}</p>
-    </div>
-  </div>
-  <div class="movie-search">
-    <h1>Search for Movies!</h1>
-    <div>
-      <label>Search:</label>
-      <button @click="movieSearch">Search</button>
-      <input type="text" v-model="searchText" />
-      <div v-for="result in results" v-bind:key="result.id">
-        <p>
-          <img v-bind:src="'https://image.tmdb.org/t/p/w500/' + result.poster_path" v-bind:alt="result.title" />
-          {{ result.title }}
-          <button @click="userMovieCreate">Add to your Top Ten</button>
-        </p>
-      </div>
+    <div v-for="movie in movies" v-bind:key="movie.id">
+      <img v-bind:src="movie.poster_path" />
+      <p>{{ movie.title }}</p>
     </div>
   </div>
 </template>

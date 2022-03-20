@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      movies: [],
+      users: [],
     };
   },
   created: function () {
@@ -11,9 +11,9 @@ export default {
   },
   methods: {
     indexMovies: function () {
-      axios.get("/movies").then((response) => {
+      axios.get("/users").then((response) => {
         console.log("movies index", response);
-        this.movies = response.data;
+        this.users = response.data;
       });
     },
   },
@@ -23,13 +23,9 @@ export default {
 <template>
   <div class="movies-index">
     <h1>All Movies</h1>
-    <div v-for="movie in movies" v-bind:key="movie.id">
-      <h2>{{ movie.title }}</h2>
-      <img v-bind:src="movie.poster_path" v-bind:alt="movie.title" />
-      <p>Title: {{ movie.title }}</p>
-      <p>Year: {{ movie.release_date }}</p>
-      <p>Director: {{ movie.director }}</p>
-      <p>Summary: {{ movie.overview }}</p>
+    <div v-for="user in users" v-bind:key="user.id">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.movies }}</p>
     </div>
   </div>
 </template>

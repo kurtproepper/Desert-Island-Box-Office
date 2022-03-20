@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+  get "/user/:id" => "users#show"
+  get "/users" => "users#index"
 
   get "/movies/search/:title" => "movies#search"
   post "/movies" => "movies#create"
