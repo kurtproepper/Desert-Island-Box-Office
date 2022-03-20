@@ -6,6 +6,7 @@ export default {
       movies: [],
       results: [],
       searchText: "",
+      user_movies: [],
     };
   },
   created: function () {
@@ -18,10 +19,10 @@ export default {
         this.movies = response.data.movies;
       });
     },
-    movieSearch: function () {
-      axios.get("/movies/search/" + this.searchText).then((response) => {
-        console.log("Search completed", response);
-        this.results = response.data.results;
+    moviesInCommon: function () {
+      axios.get("/user/1").then((response) => {
+        console.log(response);
+        this.user_movies = response.data.movies;
       });
     },
   },
@@ -30,7 +31,8 @@ export default {
 
 <template>
   <div class="user-show">
-    <h1>Your Top 10</h1>
+    <h1>Your Top Movies</h1>
+    <button @click="moviesInCommon">See Which Favorites You Have in Common!</button>
     <div v-for="movie in movies" v-bind:key="movie.id">
       <img v-bind:src="movie.poster_path" />
       <p>{{ movie.title }}</p>
