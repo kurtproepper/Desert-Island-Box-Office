@@ -9,12 +9,6 @@ export default {
   },
   created: function () {},
   methods: {
-    indexUserMovies: function () {
-      axios.get("/user_movies").then((response) => {
-        console.log("Here are your movies", response);
-        this.user_movies = response.data;
-      });
-    },
     movieSearch: function () {
       axios.get("/movies/search/" + this.searchText).then((response) => {
         console.log("Search completed", response);
