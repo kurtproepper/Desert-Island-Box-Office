@@ -4,6 +4,7 @@ export default {
   data: function () {
     return {
       users: [],
+      movies: [],
     };
   },
   created: function () {
@@ -25,7 +26,9 @@ export default {
     <h1>All Movies</h1>
     <div v-for="user in users" v-bind:key="user.id">
       <h2>{{ user.name }}</h2>
-      <p>{{ user.movies }}</p>
+      <div v-for="movie in user.movies" v-bind:key="movie.id">
+        <p>{{ movie.title }}</p>
+      </div>
     </div>
   </div>
 </template>

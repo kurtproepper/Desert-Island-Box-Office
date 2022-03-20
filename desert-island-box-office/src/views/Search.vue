@@ -5,6 +5,7 @@ export default {
     return {
       results: [],
       searchText: "",
+      newMovieParams: {},
     };
   },
   created: function () {},
@@ -16,7 +17,13 @@ export default {
       });
     },
   },
-};
+  //addMovie: function () {
+  //axios.post("/movies").then((response) => {
+  //console.log("Saved to movie database", response);
+  //this.newMovieParams = // the params of the selected movie (HELP!)
+  //})
+  //
+}; //
 </script>
 
 <template>
@@ -30,7 +37,7 @@ export default {
         <p>
           <img v-bind:src="'https://image.tmdb.org/t/p/w500/' + result.poster_path" v-bind:alt="result.title" />
           {{ result.title }}
-          <button @click="userMovieCreate">Add to your Top Ten</button>
+          <button @click="addMovie">Add to your Top Ten</button>
         </p>
       </div>
     </div>
