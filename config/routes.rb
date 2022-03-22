@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/user/:id" => "users#show"
   get "/users" => "users#index"
+  get "/users/compare" => "users#compare"
 
   get "/movies/search/:title" => "movies#search"
   post "/movies" => "movies#create"

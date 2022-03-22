@@ -6,7 +6,7 @@ export default {
       movies: [],
       results: [],
       searchText: "",
-      user_movies: [],
+      common: [],
     };
   },
   created: function () {
@@ -20,9 +20,9 @@ export default {
       });
     },
     moviesInCommon: function () {
-      axios.get("/user/1").then((response) => {
+      axios.get("/users/compare").then((response) => {
         console.log(response);
-        this.user_movies = response.data.movies;
+        this.common = response.data;
       });
     },
   },

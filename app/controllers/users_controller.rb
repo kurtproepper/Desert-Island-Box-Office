@@ -26,4 +26,24 @@ class UsersController < ApplicationController
     users = User.all
     render json: users
   end
+
+  #def compare
+  #  user = User.first.movies
+  #  friends = User.all.movies
+  #  friends = friends.drop(1)
+  #  common = []
+  #  index = 0
+  #  friend = friends[0]
+  #  while index < friends.length
+  #    common = user.intersection(friend).push
+  #    index = index + 1
+  #  end
+  #  render json: common
+  #end
+  def compare
+    user = [1, 3, 2, 4, 5]
+    friend = [6, 7, 1, 5, 9]
+    common = user.intersection(friend)
+    render json: common
+  end
 end

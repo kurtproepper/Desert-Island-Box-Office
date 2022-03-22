@@ -1,41 +1,93 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-    |
-    <router-link to="/login">Login</router-link>
-    |
-    <router-link to="/signup">Signup</router-link>
-    |
-    <router-link to="/logout">Logout</router-link>
-    |
-    <router-link to="/movies">Movies</router-link>
-    |
-    <router-link to="/profile">Profile</router-link>
-    |
-    <router-link to="/search">Search/Add Movies</router-link>
+  <div id="app">
+    <!-- HEADER -->
+    <header id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">DIBO Pages</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/movies">Friends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search">Search/Add Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ranking">Ranking Test</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ROUTER VIEW -->
+    <router-view />
+
+    <!-- FOOTER -->
+    <footer id="footer" class="midnight-blue">
+      <!-- ... -->
+    </footer>
   </div>
-  <router-view />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+h1 {
+  font-family: Convergence;
+  font-size: 23px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 23px;
 }
-
-#nav {
-  padding: 30px;
+h3 {
+  font-family: Convergence;
+  font-size: 17px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 23px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+p {
+  font-family: Convergence;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 23px;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+blockquote {
+  font-family: Convergence;
+  font-size: 17px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+pre {
+  font-family: Convergence;
+  font-size: 11px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 23px;
 }
 </style>
