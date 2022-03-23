@@ -41,8 +41,8 @@ class UsersController < ApplicationController
   #  render json: common
   #end
   def compare
-    user = [1, 3, 2, 4, 5]
-    friend = [6, 7, 1, 5, 9]
+    user = [1, 3, 2, 4, 5] # user = User.first.movies[index]["title"].push
+    friend = [6, 7, 1, 5, 9] # friend = User[index2].movies[index].push
     common = user.intersection(friend)
     render json: common
   end

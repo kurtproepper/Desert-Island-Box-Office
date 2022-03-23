@@ -32,10 +32,17 @@ export default {
 <template>
   <div class="user-show">
     <h1>Your Top Movies</h1>
-    <button @click="moviesInCommon">See Which Favorites You Have in Common!</button>
-    <div v-for="movie in movies" v-bind:key="movie.id">
-      <img v-bind:src="movie.poster_path" />
-      <p>{{ movie.title }}</p>
+    <div class="row">
+      <div v-for="movie in movies" v-bind:key="movie.id" class="col-4">
+        <img v-bind:src="movie.poster_path" class="movie-img" />
+        <p>{{ movie.title }}</p>
+      </div>
     </div>
   </div>
 </template>
+
+<style>
+.movie-img {
+  width: 200px;
+}
+</style>

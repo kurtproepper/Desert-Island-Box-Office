@@ -37,7 +37,7 @@ export default {
         <p>
           <img v-bind:src="'https://image.tmdb.org/t/p/w500/' + result.poster_path" v-bind:alt="result.title" />
           {{ result.title }}
-          <button @click="addMovie">Add to your Desert Island Picks!</button>
+          <button @click="addMovie">Bring it to the Island!</button>
         </p>
       </div>
     </div>

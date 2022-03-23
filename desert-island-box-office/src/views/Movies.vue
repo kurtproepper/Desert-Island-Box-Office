@@ -25,7 +25,7 @@ export default {
   <div class="movies-index">
     <h1>All Movies</h1>
     <div v-for="user in users" v-bind:key="user.id">
-      <h2>{{ user.name }}</h2>
+      <h2>{{ user.name }} ({{ user.common_ids.length }} in common)</h2>
       <div v-for="movie in user.movies" v-bind:key="movie.id">
         <p>{{ movie.title }}</p>
       </div>
